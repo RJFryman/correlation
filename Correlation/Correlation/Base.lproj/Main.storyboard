@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OFa-Q8-8Xn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Correlation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,383 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nji-cC-M4V">
+                                <rect key="frame" x="290" y="340" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OFH-LG-4Xe" kind="show" id="xJC-Bh-Nhv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGF-op-x49">
+                                <rect key="frame" x="290" y="159" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xmR-yy-Fx4" kind="show" id="Na8-iO-Th2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="440" y="662"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="wXA-o9-lxG">
+            <objects>
+                <tableViewController id="xmR-yy-Fx4" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hGG-ou-4oa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d9o-rt-ONj">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d9o-rt-ONj" id="JZA-Sy-KTc">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ye4-Kh-KMj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <items>
+                                                <navigationItem title="Events" id="heg-XA-GX4">
+                                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="iup-TG-2c9"/>
+                                                </navigationItem>
+                                            </items>
+                                        </navigationBar>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xmR-yy-Fx4" id="hsQ-7p-mn4"/>
+                            <outlet property="delegate" destination="xmR-yy-Fx4" id="qEA-d2-DrY"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVG-DU-Pcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="254"/>
+        </scene>
+        <!--Add Event View Controller-->
+        <scene sceneID="f4Q-cE-Q1o">
+            <objects>
+                <viewController id="HiV-S3-cNq" customClass="AddEventViewController" customModule="Correlation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mZp-Lx-Yo2"/>
+                        <viewControllerLayoutGuide type="bottom" id="CoS-JU-ndi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GHW-Pw-Bzw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubn-k9-R8b">
+                                <rect key="frame" x="244" y="30" width="113" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wE2-nG-Woe">
+                                <rect key="frame" x="25" y="60.5" width="550" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uuQ-gK-OiG">
+                                <rect key="frame" x="140" y="144.5" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="455213352.76617497">
+                                    <!--2015-06-05 16:09:12 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfT-Rg-5Wu">
+                                <rect key="frame" x="238" y="316.5" width="124" height="30"/>
+                                <state key="normal" title="Add Another Time">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG0-dK-Tzk">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="y5M-GK-lXd"/>
+                                    <barButtonItem title="Add Questions" id="ABR-Rl-TNg"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ey7-gl-vM2"/>
+                                    <barButtonItem title="Finish" id="6mb-ry-Jx1"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="sLS-9B-NYi"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ei9-86-WxV">
+                                <rect key="frame" x="0.0" y="100.5" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kHS-6B-yGM"/>
+                                    <barButtonItem style="plain" id="hDA-OI-GCh">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zab-57-e1m">
+                                            <rect key="frame" x="39" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" button="YES" selected="YES"/>
+                                            </accessibility>
+                                            <state key="normal" title="M">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="mondayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="zRg-uD-s4p"/>
+                                                <action selector="weekdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="IG2-hi-HkH"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hFB-lq-iP6"/>
+                                    <barButtonItem style="plain" id="dfT-JA-N1q">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jqm-MZ-Ax6">
+                                            <rect key="frame" x="107" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" button="YES" selected="YES"/>
+                                            </accessibility>
+                                            <state key="normal" title="T">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="tuesdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="bcz-1K-Fzt"/>
+                                                <action selector="weekdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="9uv-oQ-pAH"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9Uq-FK-qtt"/>
+                                    <barButtonItem style="plain" id="4ma-LR-HnE">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QjF-gW-JFn">
+                                            <rect key="frame" x="178" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" button="YES" selected="YES"/>
+                                            </accessibility>
+                                            <state key="normal" title="W">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="wednesdayButton:" destination="HiV-S3-cNq" eventType="touchUpInside" id="Mjb-6c-d3v"/>
+                                                <action selector="weekdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="9AJ-w7-BSB"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Qs5-HA-e4G"/>
+                                    <barButtonItem style="plain" id="Wt9-Jh-3di">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="16L-ba-v4d">
+                                            <rect key="frame" x="253" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" button="YES" selected="YES"/>
+                                            </accessibility>
+                                            <state key="normal" title="R">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="thursdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="FWm-tJ-xeR"/>
+                                                <action selector="weekdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="4kR-Q7-uqW"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Zwr-VO-IMj"/>
+                                    <barButtonItem style="plain" id="R5j-AS-g3b">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ezs-2e-fgR">
+                                            <rect key="frame" x="332" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" button="YES" selected="YES"/>
+                                            </accessibility>
+                                            <state key="normal" title="F">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="fridayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="yiD-tF-fUa"/>
+                                                <action selector="weekdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="H5x-ZA-oro"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8Uv-HG-ig5"/>
+                                    <barButtonItem style="plain" id="rJf-K6-faa">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IDa-3N-SSx">
+                                            <rect key="frame" x="416" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" button="YES" selected="YES"/>
+                                            </accessibility>
+                                            <state key="normal" title="S">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="saturdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="equ-a1-Fjz"/>
+                                                <action selector="weekdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="waO-ls-5tQ"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NTk-xQ-rQI"/>
+                                    <barButtonItem style="plain" id="HZW-CN-ZdW">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tl5-0M-JiU">
+                                            <rect key="frame" x="503" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration">
+                                                <accessibilityTraits key="traits" none="YES" button="YES" selected="YES"/>
+                                            </accessibility>
+                                            <state key="normal" title="U">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="sundayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="ZGJ-5m-Q8W"/>
+                                                <action selector="weekdayButtonPressed:" destination="HiV-S3-cNq" eventType="touchUpInside" id="A9k-3O-mYH"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FCz-OZ-LsV"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wE2-nG-Woe" secondAttribute="trailing" constant="25" id="1fg-Od-o5o"/>
+                            <constraint firstAttribute="centerX" secondItem="wE2-nG-Woe" secondAttribute="centerX" id="7bh-Bz-1AV"/>
+                            <constraint firstAttribute="trailing" secondItem="yG0-dK-Tzk" secondAttribute="trailing" id="8k5-te-HXe"/>
+                            <constraint firstAttribute="centerX" secondItem="ubn-k9-R8b" secondAttribute="centerX" id="BGH-90-IZQ"/>
+                            <constraint firstAttribute="centerX" secondItem="PfT-Rg-5Wu" secondAttribute="centerX" id="BMx-la-uNX"/>
+                            <constraint firstAttribute="centerX" secondItem="Ei9-86-WxV" secondAttribute="centerX" id="Qct-bO-kZC"/>
+                            <constraint firstAttribute="centerX" secondItem="uuQ-gK-OiG" secondAttribute="centerX" id="XVJ-E2-6T9"/>
+                            <constraint firstItem="PfT-Rg-5Wu" firstAttribute="top" secondItem="uuQ-gK-OiG" secondAttribute="bottom" constant="10" id="YML-Qw-BcH"/>
+                            <constraint firstItem="Ei9-86-WxV" firstAttribute="top" secondItem="wE2-nG-Woe" secondAttribute="bottom" constant="10" id="Z1g-bm-9iQ"/>
+                            <constraint firstItem="wE2-nG-Woe" firstAttribute="leading" secondItem="GHW-Pw-Bzw" secondAttribute="leading" constant="25" id="mmt-4e-Myj"/>
+                            <constraint firstItem="wE2-nG-Woe" firstAttribute="top" secondItem="ubn-k9-R8b" secondAttribute="bottom" constant="10" id="qOD-ro-3lT"/>
+                            <constraint firstItem="uuQ-gK-OiG" firstAttribute="top" secondItem="Ei9-86-WxV" secondAttribute="bottom" id="rXu-Bp-wZM"/>
+                            <constraint firstAttribute="trailing" secondItem="Ei9-86-WxV" secondAttribute="trailing" id="t7V-xC-gdH"/>
+                            <constraint firstItem="yG0-dK-Tzk" firstAttribute="leading" secondItem="GHW-Pw-Bzw" secondAttribute="leading" id="wLa-xl-RxX"/>
+                            <constraint firstItem="CoS-JU-ndi" firstAttribute="top" secondItem="yG0-dK-Tzk" secondAttribute="bottom" id="xlC-rz-xAg"/>
+                            <constraint firstItem="ubn-k9-R8b" firstAttribute="top" secondItem="mZp-Lx-Yo2" secondAttribute="bottom" constant="10" id="xsI-KJ-ogp"/>
+                            <constraint firstItem="Ei9-86-WxV" firstAttribute="leading" secondItem="GHW-Pw-Bzw" secondAttribute="leading" id="zh7-ng-YvY"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="Kdy-ye-tZc"/>
+                        <barButtonItem title="Add Questions" id="pJ8-LK-NW0"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="K0x-Aa-Wdy"/>
+                        <barButtonItem title="Finish" id="oeA-sQ-4Ph"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="t5b-ZJ-tnC"/>
+                    </toolbarItems>
+                    <connections>
+                        <outlet property="fridayButton" destination="Ezs-2e-fgR" id="NmL-ef-jRT"/>
+                        <outlet property="mondayButton" destination="Zab-57-e1m" id="yKr-ga-Ufi"/>
+                        <outlet property="nameOfEventTextField" destination="wE2-nG-Woe" id="lee-hI-38v"/>
+                        <outlet property="saturdayButton" destination="IDa-3N-SSx" id="P4K-eD-3Cl"/>
+                        <outlet property="sundayButton" destination="tl5-0M-JiU" id="dJK-AR-YTY"/>
+                        <outlet property="thursdayButton" destination="16L-ba-v4d" id="EiA-6E-LAQ"/>
+                        <outlet property="timeSelector" destination="uuQ-gK-OiG" id="4DJ-mK-2ox"/>
+                        <outlet property="tuesdayButton" destination="jqm-MZ-Ax6" id="Ars-bQ-2gW"/>
+                        <outlet property="wednesdayButton" destination="QjF-gW-JFn" id="aGu-wy-Ijf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HzM-jT-6GH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="-473"/>
+        </scene>
+        <!--Add Question View Controller-->
+        <scene sceneID="mVz-uu-E6u">
+            <objects>
+                <viewController id="OFa-Q8-8Xn" customClass="AddQuestionViewController" customModule="Correlation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MaV-nt-jZH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bnn-le-R9R"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OcW-en-BA5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="064-fv-3Bs">
+                                <rect key="frame" x="247" y="45" width="105.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33K-9a-Ogu">
+                                <rect key="frame" x="193" y="501" width="213" height="30"/>
+                                <state key="normal" title="Add Another Question to Event">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wny-UE-jci">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PiO-sn-cGR"/>
+                                    <barButtonItem title="Finish" id="naU-iF-Z5J"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="9qt-ho-aCD"/>
+                                </items>
+                            </toolbar>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="phd-a5-ZMd">
+                                <rect key="frame" x="25" y="285" width="550" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-Y0-2km">
+                                <rect key="frame" x="140" y="219" width="320" height="162"/>
+                            </pickerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xpM-T7-45F">
+                                <rect key="frame" x="153" y="90" width="295" height="29"/>
+                                <segments>
+                                    <segment title="New Question"/>
+                                    <segment title="Use Existing Question"/>
+                                </segments>
+                                <connections>
+                                    <action selector="whatTypeQuestionSegmentedControllerChanged:" destination="OFa-Q8-8Xn" eventType="valueChanged" id="yrz-wA-fqr"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="33K-9a-Ogu" secondAttribute="centerX" id="07d-tD-fCO"/>
+                            <constraint firstItem="Bnn-le-R9R" firstAttribute="top" secondItem="Wny-UE-jci" secondAttribute="bottom" id="9ic-68-vtB"/>
+                            <constraint firstItem="phd-a5-ZMd" firstAttribute="leading" secondItem="OcW-en-BA5" secondAttribute="leading" constant="25" id="JRg-TA-5M1"/>
+                            <constraint firstAttribute="centerX" secondItem="phd-a5-ZMd" secondAttribute="centerX" id="Os3-Di-03v"/>
+                            <constraint firstAttribute="centerY" secondItem="C8B-Y0-2km" secondAttribute="centerY" id="Ouk-dq-zbc"/>
+                            <constraint firstItem="064-fv-3Bs" firstAttribute="top" secondItem="MaV-nt-jZH" secondAttribute="bottom" constant="25" id="Qh0-9H-4dQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Wny-UE-jci" secondAttribute="trailing" id="WmE-MQ-Vc9"/>
+                            <constraint firstAttribute="centerX" secondItem="064-fv-3Bs" secondAttribute="centerX" id="atm-LM-0nl"/>
+                            <constraint firstItem="xpM-T7-45F" firstAttribute="top" secondItem="064-fv-3Bs" secondAttribute="bottom" constant="25" id="fa0-d7-xt7"/>
+                            <constraint firstAttribute="centerY" secondItem="phd-a5-ZMd" secondAttribute="centerY" id="gVt-J5-j31"/>
+                            <constraint firstItem="Wny-UE-jci" firstAttribute="leading" secondItem="OcW-en-BA5" secondAttribute="leading" id="k34-gg-fyt"/>
+                            <constraint firstAttribute="centerX" secondItem="C8B-Y0-2km" secondAttribute="centerX" id="lWS-vR-SOR"/>
+                            <constraint firstAttribute="trailing" secondItem="phd-a5-ZMd" secondAttribute="trailing" constant="25" id="pEe-mt-WJa"/>
+                            <constraint firstItem="Wny-UE-jci" firstAttribute="top" secondItem="33K-9a-Ogu" secondAttribute="bottom" constant="25" id="qJl-ej-EG4"/>
+                            <constraint firstAttribute="centerX" secondItem="xpM-T7-45F" secondAttribute="centerX" id="uEJ-lC-Uit"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="questionPickerView" destination="C8B-Y0-2km" id="tKl-nN-fFL"/>
+                        <outlet property="questionTextField" destination="phd-a5-ZMd" id="bJh-3q-YJZ"/>
+                        <outlet property="whatTypeOfQuestionSegmentedController" destination="xpM-T7-45F" id="AJX-dC-fqE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtP-9R-g0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866" y="269"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jdg-tz-M9m">
+            <objects>
+                <viewController id="OFH-LG-4Xe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0N9-Y9-uy8"/>
+                        <viewControllerLayoutGuide type="bottom" id="xPb-jy-fjl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v7Y-cP-DME">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7KL-fy-rAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="988"/>
         </scene>
     </scenes>
 </document>
